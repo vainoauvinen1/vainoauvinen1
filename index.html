@@ -1,19 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <h1>Väinö Auvinen 🏀</h1>
-    <p>Software Engineer | Student | Developer</p>
+    <canvas id="bgCanvas"></canvas>
 
-    <h2>Projects ⛹️‍♂️</h2>
-    <ul>
-        <li>
-            <a href="https://github.com/vainoauvinen1/project1">Full-Stack App 🏀</a>
-            <p>A brief description of your cool basketball or coding project.</p>
-        </li>
-        <li>
-            <a href="https://github.com/vainoauvinen1/project2">Python Script 🏀</a>
-            <p>Another awesome project goes here.</p>
-        </li>
-    </ul>
+    <main class="content">
+        <section id="hero">
+            <h1>YOUR NAME</h1>
+            <p class="subtitle">Full-Stack Developer & Hoops Enthusiast</p>
+        </section>
 
-    <h2>Contact 📬</h2>
-    <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="card">
+                    <h3>Project One</h3>
+                    <p>A cool app built with React.</p>
+                    <a href="#">View Code</a>
+                </div>
+                <div class="card">
+                    <h3>Project Two</h3>
+                    <p>E-commerce platform with Stripe.</p>
+                    <a href="#">View Code</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
 </body>
+</html>
