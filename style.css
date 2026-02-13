@@ -18,6 +18,34 @@ body {
     z-index: -1;
 }
 
+/* Scoreboard Styling */
+#scoreboard {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 2rem;
+    background: #000;
+    color: var(--primary);
+    padding: 10px 20px;
+    border: 3px solid #333;
+    border-radius: 5px;
+    z-index: 10;
+    pointer-events: none;
+    box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
+}
+
+.score-bump {
+    animation: bump 0.2s ease-out;
+}
+
+@keyframes bump {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Layout */
 .content {
     max-width: 800px;
     margin: 0 auto;
@@ -46,32 +74,8 @@ h1 { font-size: 4rem; margin-bottom: 0; color: var(--primary); }
 .card:hover { transform: translateY(-10px); }
 
 a { color: var(--primary); text-decoration: none; font-weight: bold; }
-#scoreboard {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 2rem;
-    background: #000;
-    color: #ff6b00;
-    padding: 10px 20px;
-    border: 3px solid #333;
-    border-radius: 5px;
-    z-index: 10;
-    pointer-events: none; /* So it doesn't block clicks to balls behind it */
-    box-shadow: 0 0 15px rgba(255, 107, 0, 0.5);
-}
 
-/* A quick animation for when the score updates */
-.score-bump {
-    animation: bump 0.2s ease-out;
-}
-
-@keyframes bump {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
+/* Video Overlay Styling */
 #video-overlay {
     position: fixed;
     top: 0;
@@ -79,25 +83,8 @@ a { color: var(--primary); text-decoration: none; font-weight: bold; }
     width: 100vw;
     height: 100vh;
     background: black;
-    z-index: 9999; /* Ensure it's above everything */
-    display: flex;
+    z-index: 9999;
+    display: none; /* Hidden until score = 10 */
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-#highlight-video {
-    max-height: 80vh;
-    box-shadow: 0 0 50px var(--primary);
-}
-
-#close-video {
-    margin-top: 20px;
-    padding: 10px 30px;
-    background: var(--primary);
-    border: none;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-}
+    justify-
