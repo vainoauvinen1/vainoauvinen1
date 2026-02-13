@@ -59,25 +59,26 @@ class Ball {
     }
 
     pop() {
-        // Increment Score Logic
-        score++;
-        if (scoreElement) scoreElement.innerText = score;
+    score++;
+    if (scoreElement) scoreElement.innerText = score;
 
-        // Scoreboard Animation
-        if (scoreboard) {
-            scoreboard.classList.remove('score-bump');
-            void scoreboard.offsetWidth; // Force CSS reflow
-            scoreboard.classList.add('score-bump');
-        }
+    // --- ADD THIS NEW PART HERE ---
+    if (score === 10) {
+        const overlay = document.getElementById('video-overlay');
+        const video = document.getElementById('highlight-video');
+        overlay.style.display = 'flex';
+        video.play();
+    }
+    // ------------------------------
 
-        // Ball Visual Feedback
-        this.color = '#fff';
-        this.dx *= 1.4; // Speed boost
-        this.dy *= 1.4;
-        
-        setTimeout(() => {
-            this.color = '#ff6b00';
-        }, 100);
+    if (scoreboard) {
+        scoreboard.classList.remove('score-bump');
+        void scoreboard.offsetWidth; 
+        scoreboard.classList.add('score-bump');
+    }
+    
+    // ... rest of your ball visual feedback code ...
+}
     }
 }
 
@@ -101,3 +102,9 @@ function animate() {
 }
 
 animate();
+document.getElementById('close-video').addEventListener('click', () => {
+    const overlay = document.getElementById('video-overlay');
+    const video = document.getElementById('highlight-video');
+    overlay.style.display = 'none';
+    video.pause();
+});
